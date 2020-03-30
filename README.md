@@ -6,4 +6,4 @@ Requests for pothole repair made by City of San Diego residents via the Get It D
 
 ### City of San Diego Boundary
 
-![boundary](jaimes/static/images.boundary.png)
+![boundary](jaimes/static/images/boundary.png)
