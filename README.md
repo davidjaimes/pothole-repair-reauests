@@ -17,7 +17,7 @@ Brainstorming steps to complete projects.
 ## Python-Flask Routing
 
 - [X] Start Flask routes structure with `app.py` file. :+1:
-- [ ] Place a "Scrape" San Diego button on `index.html` file to crawl websites. :palmtree:
+- [ ] Place a "Scrape" San Diego button on `index.html` file to crawl websites. :palm_tree:
 - [ ] Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
 - [ ] Use `web-scraping-challenge` homewrok as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
 
