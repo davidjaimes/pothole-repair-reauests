@@ -8,7 +8,7 @@ Brainstorming steps to complete projects.
 
 ## SQLAlchemy
 
-- [X] Start Jupyter Notebook. :sun_flower:
+- [X] Start Jupyter Notebook. :sunflower:
 - [ ] Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file. :see_no_evil:
 - [ ] Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
 - [ ] Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
