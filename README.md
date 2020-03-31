@@ -2,12 +2,14 @@
 
 Requests for pothole repair made by City of San Diego residents via the Get It Done applications and phone.
 
-## jaimes
+# Project Outline
 
-### City of San Diego Boundary
+Brainstorming steps to complete projects.
 
-![boundary](jaimes/static/images/boundary.png)
+## SQLAlchemy
 
-### City of San Diego Council Districts
+- Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file.
+- Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
+- Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
 
-![districts](jaimes/static/images/districts.png)
+## Python-Flask Routing
