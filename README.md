@@ -8,10 +8,10 @@ Brainstorming steps to complete projects.
 
 ## SQLAlchemy
 
-- [] Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file.
-- [] Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
-- [] Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
-- [] Attempt to summarize thousands of rows into hundreds range?
+- [ ] Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file.
+- [ ] Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
+- [ ] Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
+- [ ] Attempt to summarize thousands of rows into hundreds range?
 
 ## Python-Flask Routing
 
