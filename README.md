@@ -11,6 +11,7 @@ Brainstorming steps to complete projects.
 - Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file.
 - Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
 - Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
+- Attempt to summarize thousands of rows into hundreds range?
 
 ## Python-Flask Routing
 
@@ -24,3 +25,9 @@ Brainstorming steps to complete projects.
 - Make a Pie chart of Top Ten.
 - Make a GeoMaps chart.
 
+## Leaflet and Mapbox
+
+- City of San Diego Boundary
+- City of San Diego Council Districts with Party in color, Council Member, and Phone Number.
+- Markers for each pothole based on Status.
+- Summary of of each pothole Status group sum for each Council District (i.e., mouseover).
