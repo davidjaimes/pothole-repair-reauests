@@ -8,7 +8,7 @@ Brainstorming steps to complete projects.
 
 ## SQLAlchemy
 
-- [X] Start Jupyter Notebook. :+1:
+- [X] Start Jupyter Notebook. :sun_flower:
 - [ ] Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file. :see_no_evil:
 - [ ] Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
 - [ ] Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
@@ -16,7 +16,7 @@ Brainstorming steps to complete projects.
 
 ## Python-Flask Routing
 
-- [X] Start Flask routes structure with `app.py` file. :+1:
+- [X] Start Flask routes structure with `app.py` file. :cherry_blossom:
 - [ ] Place a "Scrape" San Diego button on `index.html` file to crawl websites. :palm_tree:
 - [ ] Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
 - [ ] Use `web-scraping-challenge` homewrok as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
