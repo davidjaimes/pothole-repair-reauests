@@ -13,3 +13,5 @@ Brainstorming steps to complete projects.
 - Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
 
 ## Python-Flask Routing
+
+- Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
