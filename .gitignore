@@ -231,3 +231,4 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/git,macos,flask,python,windows
 
 config.js
+.ipynb_checkpoints
