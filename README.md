@@ -8,6 +8,7 @@ Brainstorming steps to complete projects.
 
 ## SQLAlchemy
 
+- [X] Start Jupyter Notebook.
 - [ ] Develop code in Jupyter Notebook and then copy paste to Python-Flask `app.py` file.
 - [ ] Use Pandas to import CSV and Extraxt, Transform, and Load to SQLITE file.
 - [ ] Use SQLAlchemy sesssion queries to Filter, Sum, GroupBy, Count, Max, and Sort.
@@ -15,19 +16,21 @@ Brainstorming steps to complete projects.
 
 ## Python-Flask Routing
 
-- Place a "Scrape" San Diego button on `index.html` file to crawl websites.
-- Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
-- Use `web-scraping-challenge` homewrok as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
+- [X] Start Flask routes structure with `app.py` file.
+- [ ] Place a "Scrape" San Diego button on `index.html` file to crawl websites.
+- [ ] Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
+- [ ] Use `web-scraping-challenge` homewrok as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
 
 ## Bokeh JavaScript Library
 
-- Make a Bar chart of Top Ten.
-- Make a Pie chart of Top Ten.
-- Make a GeoMaps chart.
+- [X] Research Bokeh Python and JavaScript tutorials. 
+- [ ] Make a Bar chart of Top Ten.
+- [ ] Make a Pie chart of Top Ten.
+- [ ] Make a GeoMaps chart.
 
 ## Leaflet and Mapbox
 
-- City of San Diego Boundary
-- City of San Diego Council Districts with Party in color, Council Member, and Phone Number.
-- Markers for each pothole based on Status.
-- Summary of of each pothole Status group sum for each Council District (i.e., mouseover).
+- [X] City of San Diego Boundary
+- [X] City of San Diego Council Districts with Party in color, Council Member, and Phone Number.
+- [ ] Markers for each pothole based on Status.
+- [ ] Summary of of each pothole Status group sum for each Council District (i.e., mouseover).
