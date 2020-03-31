@@ -16,5 +16,11 @@ Brainstorming steps to complete projects.
 
 - Place a "Scrape" San Diego button on `index.html` file to crawl websites.
 - Web Scrape "Additional Info" section from [https://data.sandiego.gov/datasets/gid-pothole/](https://data.sandiego.gov/datasets/gid-pothole/) website.
-- Use `web-scraping-challenge` as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
+- Use `web-scraping-challenge` homewrok as a basis and scrape San Diego current weather along with making a HTML table from "Additional Info".
+
+## Bokeh JavaScript Library
+
+- Make a Bar chart of Top Ten.
+- Make a Pie chart of Top Ten.
+- Make a GeoMaps chart.
 
