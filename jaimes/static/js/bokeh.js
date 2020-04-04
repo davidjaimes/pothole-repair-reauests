@@ -6,25 +6,15 @@ var pie_data = {
   layout: {title: 'Pie Chart'}
 };
 
-var pie_chart = Bokeh.Charts.pie(pie_data);
-
-// make a plot with some tools
-var plot = Bokeh.Plotting.figure({
-    title:'Example of Random data',
-    tools: "pan,wheel_zoom,box_zoom,reset,save",
-    height: 500,
-    width: 500,
-    background_fill_color: "#F2F2F7"
+var pie_chart = Bokeh.Charts.pie(pie_data, {
+  width: 500,
+  height: 500,
+  slice_labels: 'labels',
+  inner_radius: 0,
+  outer_radius: 1,
+  start_angle: Math.PI / 2
 });
 
-plt.show(plot);
-
-plot.legend.location = "top_left"
 plt.show(plt.gridplot([[pie_chart]], {
-  plot_width:350,
-  plot_height:350,
   toolbar_location: 'right',
-  toolbar_options: {logo: 'gray'}
 }));
-
-Bokeh.Charts.show(pie_chart);
