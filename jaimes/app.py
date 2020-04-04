@@ -19,6 +19,12 @@ def districts():
     """
     return flask.render_template('districts.html')
 
+@APP.route('/bokeh/')
+def bokeh():
+    """ Displays the index page accessible at '/'
+    """
+    return flask.render_template('bokeh.html')
+
 
 if __name__ == '__main__':
     APP.debug=True
