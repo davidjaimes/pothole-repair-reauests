@@ -1,31 +1,36 @@
 #!/usr/bin/env python
 
-import flask
+# import necessary libraries
+from flask import Flask, render_template
+import requests
+from bs4 import BeautifulSoup as bs
 
+# create instance of Flask app
+app = Flask(__name__)
 
-# Create the application.
-APP = flask.Flask(__name__)
-
-
-@APP.route('/')
+@app.route('/')
 def index():
     """ Displays the index page accessible at '/'
     """
-    return flask.render_template('index.html')
+    city_url="https://www.sandiego.gov/"
+    city_response=requests.get(city_url)
+    city_soup=bs(city_response.text,"html.parser")
+    weather = city_soup.find("div",class_="card--weather").p.span.text
+    return render_template('index.html', sdweather=weather)
 
-@APP.route('/districts/')
+@app.route('/districts/')
 def districts():
     """ Displays the index page accessible at '/'
     """
-    return flask.render_template('districts.html')
+    return render_template('districts.html')
 
-@APP.route('/bokeh/')
+@app.route('/bokeh/')
 def bokeh():
     """ Displays the index page accessible at '/'
     """
-    return flask.render_template('bokeh.html')
+    return render_template('bokeh.html')
 
 
 if __name__ == '__main__':
-    APP.debug=True
-    APP.run()
+    app.debug=True
+    app.run()

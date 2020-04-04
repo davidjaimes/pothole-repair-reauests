@@ -2,6 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>City of San Diego</title>
 
     <!-- Leaflet JS & CSS -->
@@ -12,6 +13,12 @@
     integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
     crossorigin=""></script>
 
+    <!-- Boot Imports -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <!-- d3 JavaScript -->
     <script src="https://d3js.org/d3.v4.min.js"></script>
 
@@ -21,15 +28,39 @@
   </head>
   <body>
 
+    <!-- Bootstrap Code -->
+    <div class="jumbotron">
+      <h1 class="display-4">City of San Diego Potholes</h1>
+      <p class="lead">Authors: Serina Robles, Young You, and David Jaimes.</p>
+      <hr class="my-4">
+      <p>Requests for pothole repair made by City of San Diego residents via the Get It Done applications and phone.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/districts/" role="button">Learn more</a>
+      </p>
+    </div>
+
+    <!-- Put Additional Information Here -->
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Current San Diego Weather</h5>
+        <p class="card-text">{{ sdweather }}</p>
+        <a href="#" class="btn btn-primary">Scrape Current Weather</a>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Pothole Data Collected From</h5>
+        <p class="card-text">Young: Additional Table Here</p>
+        <a href="https://sandiego.gov" class="btn btn-primary">sandiego.gov</a>
+      </div>
+    </div>
+
     <!-- map div -->
     <div id="map"></div>
+
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>
       <!-- JS  -->
     <script type="text/javascript" src="static/js/boundary.js"></script>
-    <!-- <script type="text/javascript" src="static/js/logic2.js"></script> -->
-    <!-- <script type="text/javascript" src="static/js/logic3.js"></script> -->
-    <!-- <script type="text/javascript" src="static/js/logic4.js"></script> -->
 
   </body>
 </html>
