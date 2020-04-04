@@ -1,29 +1,30 @@
 var plt = Bokeh.Plotting;
 
 var pie_data = {
-    labels: ['Work', 'Eat', 'Commute', 'Sport', 'Watch TV', 'Sleep'],
-    values: [8, 2, 2, 4, 0, 8],
+  labels: ['Mobile', 'Web', 'Phone', 'Email'],
+  values: [38586, 22592, 6378, 324],
+  layout: {title: 'Pie Chart'}
 };
 
-var p1 = Bokeh.Charts.pie(pie_data);
-var p2 = Bokeh.Charts.pie(pie_data, {
-    inner_radius: 0.2,
-    start_angle: Math.PI / 2
-});
-var p3 = Bokeh.Charts.pie(pie_data, {
-    inner_radius: 0.2,
-    start_angle: Math.PI / 6,
-    end_angle: 5 * Math.PI / 6
-});
-var p4 = Bokeh.Charts.pie(pie_data, {
-    inner_radius: 0.2,
-    palette: "Oranges9",
-    slice_labels: "percentages"
+var pie_chart = Bokeh.Charts.pie(pie_data);
+
+// make a plot with some tools
+var plot = Bokeh.Plotting.figure({
+    title:'Example of Random data',
+    tools: "pan,wheel_zoom,box_zoom,reset,save",
+    height: 500,
+    width: 500,
+    background_fill_color: "#F2F2F7"
 });
 
-// add the plot to a document and display it
-var doc = new Bokeh.Document();
-doc.add_root(plt.gridplot(
-                 [[p1, p2], [p3, p4]],
-                 {plot_width:250, plot_height:250}));
-Bokeh.embed.add_document_standalone(doc, document.currentScript.parentElement);
+plt.show(plot);
+
+plot.legend.location = "top_left"
+plt.show(plt.gridplot([[pie_chart]], {
+  plot_width:350,
+  plot_height:350,
+  toolbar_location: 'right',
+  toolbar_options: {logo: 'gray'}
+}));
+
+Bokeh.Charts.show(pie_chart);
