@@ -1,16 +1,18 @@
 // Creating map object
-var map = L.map("map", {
-  center: [32.8, -117.1],
-  zoom: 10
+var map = L.map("districts-id", {
+  center: [32.82, -117.1],
+  zoomSnap: 0.25,
+  zoom: 9.5,
+  zoomDelta: 0.5
 });
 
 // Adding tile layer
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.dark",
   accessToken: API_KEY
 }).addTo(map);
+L.control.scale({imperial: true}).addTo(map);
 
 // Uncomment this link local geojson for when data.beta.nyc is down
 var link = "http://seshat.datasd.org/sde/council/council_districts_datasd.geojson";
@@ -79,7 +81,7 @@ d3.json(link, function(data) {
         }
       });
       // Giving each feature a pop-up with information pertinent to it
-      layer.bindPopup("<h2>District " + feature.properties.district + "<br/>Council Member<h2><hr/><h1>" + feature.properties.name + "</h1> <hr> <h2>" + feature.properties.phone + "</h2>");
+      layer.bindPopup("<h6>District " + feature.properties.district + "<br/>Council Member<h6><hr/><h5>" + feature.properties.name + "</h5> <hr> <h6>" + feature.properties.phone + "</h6>");
 
     }
   }).addTo(map);

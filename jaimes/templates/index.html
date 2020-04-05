@@ -45,11 +45,11 @@
       </div>
     </nav>
 
-    <br/></br/><br/></br/>
-    <div class="container">
+    <!-- Boostrap Cards for Current Weather and Developers List -->
+    <div class="container mt-5">
       <div class="row">
-        <div class="col-lg">
-          <div class="card text-center mb-5 border-0 bg-transparent">
+        <div class="col-xl mt-5">
+          <div class="card text-center border-0 bg-transparent">
             <div class="card-body">
               <h3 class="card-title">Current San Diego Weather</h3>
               <!-- Place sdweather variable here from app.py file -->
@@ -60,25 +60,54 @@
             </div>
           </div>
         </div>
-
-        <div class="col-lg">
-          <div class="card text-center mb-5 border-0 text-dark bg-transparent">
+        <div class="col-xl mt-5">
+          <div class="card text-center border-0 text-dark bg-transparent">
             <div class="card-body">
               <h3 class="card-title text-primary">Website Developers</h3>
               <h1 class="card-text">Serina Robles</h1>
               <h1 class="card-text">Young You</h1>
               <h1 class="card-text">David Jaimes</h1>
+              <p class="text-muted">
+                <small><b>Thank You:</b> Peter Chen, Alan Cecil, and J. B. Paragas</small>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Leaflet City Coundary and Council Districts -->
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-xl">
+          <div class="card text-center mt-5 border-0 bg-transparent">
+            <h3>City Boundary Map</h3>
+            <div class="card">
+              <div class="card-body" id="boundary-id" style="height: 400px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl">
+          <div class="card text-center mt-5 border-0 bg-transparent">
+            <h3>Council Districts Map</h3>
+            <div class="card-body" id="districts-id" style="height: 400px"></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-text text-center text-muted">
+        <small>
+        Map data: &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>
+        Contributors: <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>
+        Imagery: © <a href=\"https://www.mapbox.com/\">Mapbox</a>
+        </small>
+      </p>
+    </div>
+
     <!-- Put Additional Information Here -->
     <div class="container">
       <div class="row">
         <div class="col-xl">
-          <div class="card text-center mb-5 border-0 bg-transparent">
+          <div class="card text-center border-0 bg-transparent">
             <div class="card-body">
               <h3 class="card-title text-dark">Pothole Data Information</h3>
             </div>
@@ -87,15 +116,11 @@
       </div>
     </div>
 
-    <br/></br/>
-    <!-- City of San Diego Boudary Map -->
-    <div class="container" id="map">
-    </div>
-
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>
       <!-- JS  -->
     <script type="text/javascript" src="static/js/boundary.js"></script>
+    <script type="text/javascript" src="static/js/districts.js"></script>
 
   </body>
 </html>
