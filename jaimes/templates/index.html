@@ -104,9 +104,19 @@
     <div class="container">
       <div class="row">
         <div class="col-xl">
-          <div class="card text-center border-0 bg-transparent">
+          <div class="card border-0 bg-transparent">
             <div class="card-body">
-              <h3 class="card-title text-dark">Pothole Data Information</h3>
+              <h3 class="card-title text-dark text-center">Pothole Data Information</h3>
+              <table class='table'>
+                <tbody>
+                  {% for k, v in keyvalues %}
+                    <tr>
+                      <th scope="row">{{ k }}</td>
+                      <td class="text-right">{{ v }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
