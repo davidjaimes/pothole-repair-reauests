@@ -6,14 +6,10 @@
     <title>City of San Diego</title>
 
     <!-- Leaflet JS & CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
 
-    <!-- Boot Imports -->
+    <!-- Bootstrap Imports -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -24,38 +20,77 @@
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
-
   </head>
-  <body>
 
-    <!-- Bootstrap Code -->
-    <div class="jumbotron">
-      <h1 class="display-4">City of San Diego Potholes</h1>
-      <p class="lead">Authors: Serina Robles, Young You, and David Jaimes.</p>
-      <hr class="my-4">
-      <p>Requests for pothole repair made by City of San Diego residents via the Get It Done applications and phone.</p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="/districts/" role="button">Learn more</a>
-      </p>
+  <body style="background-color: #f2f2f2">
+
+    <!-- Bootstrap Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Pothole Repair Requests</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">City of San Diego</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/districts/">Council Districts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Data Visualizations</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <br/></br/><br/></br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg">
+          <div class="card text-center mb-5 border-0 bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title">Current San Diego Weather</h3>
+              <!-- Place sdweather variable here from app.py file -->
+              <h1 class="card-text">{{ sdweather }}&#8457;</h1>
+              <p class="card-text text-muted">
+                <b>Wikipedia:</b> The climate of San Diego, California is classified as a Mediterranean climate (Köppen climate classification Csa). The basic climate features hot, sunny, and dry summers, and cooler, wetter winters. However, San Diego is much more arid than typical Mediterranean climates, and winters are still dry compared with most other zones with this type of climate.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg">
+          <div class="card text-center mb-5 border-0 text-dark bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title text-primary">Website Developers</h3>
+              <h1 class="card-text">Serina Robles</h1>
+              <h1 class="card-text">Young You</h1>
+              <h1 class="card-text">David Jaimes</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Put Additional Information Here -->
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Current San Diego Weather</h5>
-        <p class="card-text">{{ sdweather }}</p>
-        <a href="#" class="btn btn-primary">Scrape Current Weather</a>
-      </div>
-
-      <div class="card-body">
-        <h5 class="card-title">Pothole Data Collected From</h5>
-        <p class="card-text">Young: Additional Table Here</p>
-        <a href="https://sandiego.gov" class="btn btn-primary">sandiego.gov</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl">
+          <div class="card text-center mb-5 border-0 bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title text-dark">Pothole Data Information</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- map div -->
-    <div id="map"></div>
+    <br/></br/>
+    <!-- City of San Diego Boudary Map -->
+    <div class="container" id="map">
+    </div>
 
     <!-- API key -->
     <script type="text/javascript" src="static/js/config.js"></script>
