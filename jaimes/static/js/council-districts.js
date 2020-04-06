@@ -10,7 +10,7 @@ var councilMap = L.map("council-districts-id", {
 L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   maxZoom: 18,
   id: "mapbox.dark",
-  accessToken: API_KEY
+  accessToken: API_KEY_DISTRICTS
 }).addTo(councilMap);
 L.control.scale().addTo(councilMap);
 
