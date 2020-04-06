@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>City of San Diego</title>
+
+    <!-- Leaflet JS & CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+
+    <!-- Bootstrap Imports -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+
+  <body style="background-color: #f2f2f2">
+
+    <!-- Bootstrap Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">Pothole Repair Requests</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/bokeh">Bokeh Plots</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Boostrap Cards for Current Weather and Developers List -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-xl mt-5">
+          <div class="card text-center border-0 bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title">Current San Diego Weather</h3>
+              <!-- Place sdweather variable here from app.py file -->
+              <h1 class="card-text">{{ sdweather }}&#8457;</h1>
+              <p class="card-text text-muted">
+                <b>Wikipedia:</b> The climate of San Diego, California is classified as a Mediterranean climate (Köppen climate classification Csa). The basic climate features hot, sunny, and dry summers, and cooler, wetter winters. However, San Diego is much more arid than typical Mediterranean climates, and winters are still dry compared with most other zones with this type of climate.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl mt-5">
+          <div class="card text-center border-0 text-dark bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title text-primary">Website Developers</h3>
+              <h1 class="card-text">Serina Robles</h1>
+              <h1 class="card-text">Young You</h1>
+              <h1 class="card-text">David Jaimes</h1>
+              <p class="text-muted">
+                <small><b>Thank You:</b> Peter Chen, Alan Cecil, and J. B. Paragas</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leaflet City Coundary and Council Districts -->
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-xl">
+          <div class="card text-center mt-5 border-0 bg-transparent">
+            <h3>City Boundary Map</h3>
+            <div class="card">
+              <div class="card-body" id="boundary-id" style="height: 400px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl">
+          <div class="card text-center mt-5 border-0 bg-transparent">
+            <h3>Council Districts Map</h3>
+            <div class="card-body" id="districts-id" style="height: 400px"></div>
+          </div>
+        </div>
+      </div>
+      <p class="card-text text-center text-muted">
+        <small>
+        Map data: &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>
+        Contributors: <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>
+        Imagery: © <a href=\"https://www.mapbox.com/\">Mapbox</a>
+        </small>
+      </p>
+    </div>
+
+    <!-- Put Additional Information Here -->
+    <div class="container">
+      <div class="row">
+        <div class="col-xl">
+          <div class="card border-0 bg-transparent">
+            <div class="card-body">
+              <h3 class="card-title text-dark text-center">Pothole Data Information</h3>
+              <table class='table table-striped table-bordered'>
+                <caption>
+                  <small>
+                    <b>Table:</b> This table is scraped from the "Additional Info" section of <a href="https://data.sandiego.gov/datasets/gid-pothole/">https://data.sandiego.gov/datasets/gid-pothole/</a></caption>
+                  </small>
+                <tbody>
+                  {% for k, v in keyvalues %}
+                    <tr>
+                      <th scope="row">{{ k }}</td>
+                      <td class="text-right">{{ v }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+      <!-- JS  -->
+    <script type="text/javascript" src="static/js/boundary.js"></script>
+    <script type="text/javascript" src="static/js/districts.js"></script>
+
+  </body>
+</html>
