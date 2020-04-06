@@ -29,12 +29,6 @@ def index():
     values = df[1].values.tolist()
     return render_template('index.html', sdweather=weather, keyvalues=zip(keys, values))
 
-@app.route('/council-districts/')
-def councildistricts():
-    """ Displays the index page accessible at '/'
-    """
-    return render_template('council-districts.html')
-
 @app.route('/bokeh/')
 def bokeh():
     """ Displays the index page accessible at '/'
