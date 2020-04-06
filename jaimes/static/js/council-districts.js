@@ -1,5 +1,5 @@
 // Creating map object
-var map = L.map("districts-id", {
+var councilMap = L.map("council-districts-id", {
   center: [32.82, -117.1],
   zoomSnap: 0.25,
   zoom: 9.5,
@@ -11,11 +11,11 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   maxZoom: 18,
   id: "mapbox.dark",
   accessToken: API_KEY
-}).addTo(map);
-L.control.scale().addTo(map);
+}).addTo(councilMap);
+L.control.scale().addTo(councilMap);
 
 // Uncomment this link local geojson for when data.beta.nyc is down
-var link = "http://seshat.datasd.org/sde/council/council_districts_datasd.geojson";
+var councilLink = "http://seshat.datasd.org/sde/council/council_districts_datasd.geojson";
 
 // Our style object
 function chooseColor(borough) {
@@ -44,7 +44,7 @@ function chooseColor(borough) {
 }
 
 // Grabbing our GeoJSON data..
-d3.json(link, function(data) {
+d3.json(councilLink, function(data) {
   // Creating a geoJSON layer with the retrieved data
   L.geoJson(data, {
     // Style each feature (in this case a neighborhood)
@@ -84,5 +84,5 @@ d3.json(link, function(data) {
       layer.bindPopup("<h6>District " + feature.properties.district + "<br/>Council Member<h6><hr/><h5>" + feature.properties.name + "</h5> <hr> <h6>" + feature.properties.phone + "</h6>");
 
     }
-  }).addTo(map);
+  }).addTo(councilMap);
 });
