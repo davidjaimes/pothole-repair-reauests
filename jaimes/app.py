@@ -69,7 +69,7 @@ def json_data():
     session = Session(bind=engine)
 
     mlist = []
-    status = ['New', 'Referred', 'In Process']
+    status = ['New', 'In Process', 'Referred']
     for stat in status:
         latitude = session.query(Potholes.lat).filter(Potholes.status == stat).all()
         latitude = numpy.array(latitude).flatten()
@@ -82,7 +82,7 @@ def json_data():
                 "Longitude": lng
             })
     import json
-    with open('data.json', 'w') as f:
+    with open('static/js/data.json', 'w') as f:
         json.dump(mlist, f)
     return jsonify(mlist)
 
