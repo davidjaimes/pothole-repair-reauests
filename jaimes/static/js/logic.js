@@ -10,14 +10,14 @@ function createMap(d1, d2, d3) {
 
   // Create a baseMaps object to hold the lightmap layer
   var baseMaps = {
-    "Light Map": lightmap
+    "Map": lightmap
   };
 
   // Create an overlayMaps object to hold the bikeStations layer
   var overlayMaps = {
-    "New": d1,
-    "In Process": d2,
-    "Referred": d3
+    "New (Red)": d1,
+    "In Process (Green)": d2,
+    "Referred (Blue)": d3
   };
 
   // Create the map object with options
@@ -26,7 +26,7 @@ function createMap(d1, d2, d3) {
     zoomSnap: 0.25,
     zoom: 9.5,
     zoomDelta: 0.5,
-    layers: [lightmap, d1, d2, d3]
+    layers: [lightmap, d2, d3, d1]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
@@ -43,20 +43,27 @@ function createMarkers(response) {
   var processMarker = [];
 
   // Loop through the stations array
-  for (var index = 0; index < 500; index++) {
+  for (var index = 0; index < response.length; index++) {
 
     var obj = response[index];
 
     if (obj.Latitude / obj.Latitude == 1 || obj.Longitude / obj.Longitude == 1) {
 
-      // For each station, create a marker and bind a popup with the station's name
-      var bikeMarker = L.marker([obj.Latitude, obj.Longitude])
-        .bindPopup("<h3>" + obj.Status + "</h3>");
-
-      // Add the marker to the bikeMarkers array
-      if (obj.Status == "New") {newMarker.push(bikeMarker)};
-      if (obj.Status == "In Process") {processMarker.push(bikeMarker)};
-      if (obj.Status == "Referred") {referMarker.push(bikeMarker)};
+      if (obj.Status == "New") {
+        var bikeMarker = L.circleMarker([obj.Latitude, obj.Longitude], {radius: 3, color: 'red'})
+          .bindPopup("<h3>" + obj.Status + "</h3>");
+        newMarker.push(bikeMarker)
+      };
+      if (obj.Status == "In Process") {
+        var bikeMarker = L.circleMarker([obj.Latitude, obj.Longitude], {radius: 3, color: 'green'})
+          .bindPopup("<h3>" + obj.Status + "</h3>");
+        processMarker.push(bikeMarker)
+      };
+      if (obj.Status == "Referred") {
+        var bikeMarker = L.circleMarker([obj.Latitude, obj.Longitude], {radius: 3, color: 'blue'})
+          .bindPopup("<h3>" + obj.Status + "</h3>");
+        referMarker.push(bikeMarker)
+      };
     };
   }
 
