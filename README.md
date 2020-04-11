@@ -26,11 +26,11 @@ Brainstorming steps to complete projects.
 - [X] Research Bokeh Python and JavaScript tutorials. :scream: :sob:
 - [ ] Make a Bar chart of Top Ten.
 - [X] Make a Pie chart of Top Ten.
-- [ ] Make a GeoMaps chart.
+- [X] Make a GeoMaps chart.
 
 ## Leaflet and Mapbox
 
 - [X] City of San Diego Boundary
 - [X] City of San Diego Council Districts with Party in color, Council Member, and Phone Number.
-- [ ] Markers for each pothole based on Status.
-- [ ] Summary of of each pothole Status group sum for each Council District (i.e., mouseover).
+- [X] Markers for each pothole based on Status.
+- [X] Summary of of each pothole Status group sum for each Council District (i.e., mouseover).
