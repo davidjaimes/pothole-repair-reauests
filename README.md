@@ -1,3 +1,10 @@
+# Instructions for Running the Website
+
+1. Create a `config.js` file and save in the `static/js/folder`.
+2. Create an API KEY from MapBox.com and put it in the `config.js` file.
+3. Run the `app.py` file with Python.
+4. Go to `http://127.0.0.1:5000/` in your browser.
+
 # Project 2: Pothole Repair Reauests
 
 Requests for pothole repair made by City of San Diego residents via the Get It Done applications and phone.
